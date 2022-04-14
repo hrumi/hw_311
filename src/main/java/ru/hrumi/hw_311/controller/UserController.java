@@ -39,6 +39,12 @@ public class UserController {
         return "redirect:/users";
     }
 
+    @GetMapping("/{id}")
+    public String showUser(@PathVariable("id") int id, Model model) {
+        model.addAttribute("user", userService.getUserById(id));
+        return "user";
+    }
+
     @PostMapping() //ловим ПОСТ запрос из view new
     public String addNewUser(@ModelAttribute("user") User user) {
         userService.addUser(user);
