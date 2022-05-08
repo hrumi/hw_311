@@ -1,9 +1,8 @@
 package ru.hrumi.hw_311.model;
 
-import lombok.Data;
+
 import javax.persistence.*;
 
-@Data //для ломбока
 @Entity
 @Table(name = "users")
 public class User {
@@ -36,5 +35,29 @@ public class User {
         result = 31 * result + name.hashCode();
         result = 31 * result + age.hashCode();
         return result;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 }

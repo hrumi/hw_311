@@ -22,11 +22,6 @@ public class UserController {
         return "index";
     }
 
-//    @GetMapping("/new") //получение view для создания нового user
-//    public String newUser(@ModelAttribute("user") User user) {
-//        return "new";
-//    }
-
     @GetMapping("/{id}/edit")
     public String editUser(@PathVariable("id") int id, Model model) {
         model.addAttribute("user", userService.getUserById(id));
